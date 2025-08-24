@@ -1,0 +1,17 @@
+<div class="pagination" *ngIf="totalPages > 1">
+    <!-- Önceki -->
+    <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">
+      &laquo; Önceki
+    </button>
+  
+    <!-- Sayfa numaraları -->
+    <button *ngFor="let page of pages" (click)="changePage(page)" [class.active]="currentPage === page">
+      {{ page }}
+    </button>
+  
+    <!-- Sonraki -->
+    <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">
+      Sonraki &raquo;
+    </button>
+  </div>
+  

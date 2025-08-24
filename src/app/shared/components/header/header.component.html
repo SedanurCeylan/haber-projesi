@@ -1,0 +1,27 @@
+<header class="header-container">
+    <div class="top-bar">
+      <div class="brand">Sedanur Ceylan</div>
+  
+      <div class="search-box">
+        <input
+          type="text"
+          placeholder="Haber ara..."
+          [(ngModel)]="searchQuery"
+          (keyup.enter)="onSearch()"
+        />
+        <button
+          class="clear-btn"
+          [class.visible]="searchQuery"
+          (click)="clearSearch()"
+        >×</button>
+        <button (click)="onSearch()">Ara</button>
+      </div>
+    </div>
+  
+    <nav class="navbar">
+      <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Anasayfa</a>
+      <a [routerLink]="['/category', 'general']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Kategoriler</a>
+      <a [routerLink]="['/about']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Hakkımda</a>
+    </nav>
+  </header>
+  

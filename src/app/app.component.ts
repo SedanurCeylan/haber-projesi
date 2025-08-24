@@ -1,12 +1,22 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Router } from '@angular/router';
+import { HeaderComponent } from './shared/components/header/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  standalone: true,
+  imports: [CommonModule, HeaderComponent, RouterModule],
+  template: `
+    <app-header (search)="onSearch($event)"></app-header>
+    <router-outlet></router-outlet>
+  `
 })
 export class AppComponent {
-  title = 'newspaper';
+  constructor(private router: Router) {}
+
+  onSearch(term: string) {
+    // Arama yapılırken direkt URL'i güncelle ve HomeComponent aç
+    this.router.navigate(['/'], { queryParams: { search: term } });
+  }
 }

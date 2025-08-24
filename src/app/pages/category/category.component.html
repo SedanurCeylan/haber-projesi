@@ -1,0 +1,58 @@
+<div class="category-page">
+    <!-- Sidebar -->
+    <aside class="filter-sidebar">
+      <h3>Filtrele</h3>
+  
+      <!-- Kategoriler -->
+      <div class="filter-section">
+        <h4>Kategoriler</h4>
+        <label *ngFor="let cat of categories">
+          <input type="radio" name="category" [value]="cat" [(ngModel)]="selectedCategory" (change)="changeCategory(cat)" />
+          {{ cat | titlecase }}
+        </label>
+      </div>
+  
+      <!-- Özellikler -->
+      <div class="filter-section">
+        <h4>Özellikler</h4>
+        <label>
+          <input type="checkbox" [(ngModel)]="filters.popular" (change)="applyFilters()" /> Popüler
+        </label>
+        <label>
+          <input type="checkbox" [(ngModel)]="filters.latest" (change)="applyFilters()" /> En Son
+        </label>
+        <label>
+          <input type="checkbox" [(ngModel)]="filters.trending" (change)="applyFilters()" /> Trend
+        </label>
+      </div>
+  
+      <button (click)="resetFilters()">Sıfırla</button>
+    </aside>
+  
+    <!-- Haber Listesi -->
+    <main class="news-list">
+      <h2>Kategori: {{ selectedCategory | titlecase }}</h2>
+  
+      <div *ngIf="filteredNews.length === 0">Bu kategoriye ait haber bulunamadı.</div>
+  
+      <div class="news-grid">
+        <div *ngFor="let n of filteredNews" class="news-card">
+          <img *ngIf="n.urlToImage" [src]="n.urlToImage" alt="Haber görseli" />
+          <div class="card-content">
+            <h4>{{ n.title }}</h4>
+            <p>{{ n.description }}</p>
+            <a [href]="n.url" target="_blank">Devamını oku</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Pagination -->
+      <app-pagination
+        [totalResults]="totalResults"
+        [pageSize]="pageSize"
+        [currentPage]="currentPage"
+        (pageChange)="goToPage($event)">
+      </app-pagination>
+    </main>
+  </div>
+  
