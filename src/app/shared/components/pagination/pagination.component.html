@@ -4,14 +4,13 @@
     </button>
   
     <button
-    *ngFor="let page of visiblePages"
-    (click)="typeof page === 'number' ? changePage(page) : null"
-    [class.active]="currentPage === page"
-    [disabled]="page === '...'"
-  >
-    {{ page }}
-  </button>
-  
+      *ngFor="let page of visiblePages"
+      (click)="changePage(page)"
+      [class.active]="currentPage === page"
+      [disabled]="page === '...'"
+    >
+      {{ page }}
+    </button>
   
     <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">
       Sonraki &raquo;

@@ -18,10 +18,13 @@ export class PaginationComponent {
     return this.pageSize > 0 ? Math.ceil(this.totalResults / this.pageSize) : 0;
   }
 
-  changePage(page: number): void {
-    if (page >= 1 && page <= this.totalPages && page !== this.currentPage) {
-      this.currentPage = page;
-      this.pageChange.emit(page);
+  changePage(page: number | string): void {
+
+    const numericPage = typeof page === 'number' ? page : parseInt(page, 10);
+    
+    if (!isNaN(numericPage) && numericPage >= 1 && numericPage <= this.totalPages && numericPage !== this.currentPage) {
+      this.currentPage = numericPage;
+      this.pageChange.emit(numericPage);
     }
   }
 
