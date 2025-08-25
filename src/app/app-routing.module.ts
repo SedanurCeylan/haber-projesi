@@ -7,8 +7,8 @@ import { CategoryPageComponent } from './pages/category/category.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'category/:categoryName', component: CategoryPageComponent }, // category sayfası
-  { path: '**', redirectTo: '' } // wildcard
+  { path: 'category/:categoryName', component: CategoryPageComponent },
+  { path: '**', redirectTo: '' } 
 ];
 
 @NgModule({

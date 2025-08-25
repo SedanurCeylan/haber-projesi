@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class NewsService {
-  private apiKey = 'bcc4e58a26984769914af977359e5452'; // kendi keyini koy
+  private apiKey = 'bcc4e58a26984769914af977359e5452'; 
   private apiUrl = `https://newsapi.org/v2/top-headlines?country=tr&apiKey=${this.apiKey}`;
 
   constructor(private http: HttpClient) {}

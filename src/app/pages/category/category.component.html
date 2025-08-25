@@ -1,9 +1,8 @@
 <div class="category-page">
-    <!-- Sidebar -->
+
     <aside class="filter-sidebar">
       <h3>Filtrele</h3>
   
-      <!-- Kategoriler -->
       <div class="filter-section">
         <h4>Kategoriler</h4>
         <label *ngFor="let cat of categories">
@@ -12,7 +11,6 @@
         </label>
       </div>
   
-      <!-- Özellikler -->
       <div class="filter-section">
         <h4>Özellikler</h4>
         <label>
@@ -29,7 +27,6 @@
       <button (click)="resetFilters()">Sıfırla</button>
     </aside>
   
-    <!-- Haber Listesi -->
     <main class="news-list">
       <h2>Kategori: {{ selectedCategory | titlecase }}</h2>
   
@@ -46,7 +43,6 @@
         </div>
       </div>
   
-      <!-- Pagination -->
       <app-pagination
         [totalResults]="totalResults"
         [pageSize]="pageSize"

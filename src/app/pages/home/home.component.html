@@ -1,7 +1,6 @@
 <div *ngIf="loading">Haberler yükleniyor...</div>
 <div *ngIf="error" class="error">{{ error }}</div>
 
-<!-- Slider -->
 <div class="slider-container" *ngIf="sliderArticles.length > 0">
   <button class="slider-btn left" (click)="prevSlide()">&#10094;</button>
   
@@ -17,7 +16,6 @@
   <button class="slider-btn right" (click)="nextSlide()">&#10095;</button>
 </div>
 
-<!-- Diğer haberler -->
 <div class="articles" *ngIf="pagedArticles.length > 0">
   <div *ngFor="let article of pagedArticles" class="article-card">
     <img *ngIf="article.urlToImage" [src]="article.urlToImage" alt="Haber resmi"/>
@@ -27,7 +25,6 @@
   </div>
 </div>
 
-<!-- Pagination -->
 <app-pagination
   [totalResults]="totalResults"
   [pageSize]="pageSize"

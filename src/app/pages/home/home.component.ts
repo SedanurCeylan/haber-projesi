@@ -16,7 +16,7 @@ interface NewsArticle {
   standalone: true,
   imports: [CommonModule, PaginationComponent],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
   articles: NewsArticle[] = [];

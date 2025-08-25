@@ -20,7 +20,7 @@ interface NewsArticle {
   standalone: true,
   imports: [CommonModule, FormsModule, PaginationComponent],
   templateUrl: './category.component.html',
-  styleUrls: ['./category.component.scss']
+  styleUrls: ['./category.component.css']
 })
 export class CategoryPageComponent implements OnInit {
   categories = ['general','business','entertainment','health','science','sports','technology'];
@@ -30,8 +30,8 @@ export class CategoryPageComponent implements OnInit {
   filters = { popular: false, latest: false, trending: false };
 
   currentPage = 1;
-  pageSize = 20;       // Sayfa başına gösterilecek haber
-  totalResults = 0;    // API’den gelen toplam haber sayısı
+  pageSize = 20;       
+  totalResults = 0;   
 
   private apiKey = '676f017549224f488970f1835f9db971';
   private baseUrl = 'https://newsapi.org/v2/top-headlines?country=us';
@@ -58,9 +58,9 @@ export class CategoryPageComponent implements OnInit {
         trending: Math.random() > 0.5
       }));
 
-      this.totalResults = this.news.length; // Toplam sonuç
-      this.applyFilters();                  // Filtreleri uygula
-      this.goToPage(1);                     // İlk sayfayı göster
+      this.totalResults = this.news.length; 
+      this.applyFilters();                 
+      this.goToPage(1);                     
     });
   }
 
@@ -81,7 +81,7 @@ export class CategoryPageComponent implements OnInit {
   }
 
   applyFilters() {
-    this.goToPage(1); // Filtre uygulandıktan sonra ilk sayfayı göster
+    this.goToPage(1); 
   }
 
   resetFilters() {

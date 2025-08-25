@@ -1,0 +1,156 @@
+.about-page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #2c3e50;
+  background: linear-gradient(180deg, #fdf1f1 0%, #ffffff 100%);
+}
+
+.about-page .profile-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  padding: 35px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-page .profile-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.about-page .profile-card h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #e63946;
+}
+
+.about-page .profile-card .title {
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 14px;
+  font-size: 15px;
+}
+
+.about-page .profile-card .contact-info p {
+  margin: 6px 0;
+  font-size: 15px;
+  color: #555;
+}
+
+.about-page .profile-card .social-buttons {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.about-page .profile-card .social-buttons .btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.about-page .profile-card .social-buttons .btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.about-page .profile-card .social-buttons .btn.github { background: #333; }
+.about-page .profile-card .social-buttons .btn.linkedin { background: #0077b5; }
+.about-page .profile-card .social-buttons .btn.website { background: #e63946; }
+
+.about-page .profile-card .bio {
+  margin-top: 16px;
+  font-size: 15px;
+  color: #444;
+  line-height: 1.7;
+}
+
+.about-page .section {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 25px;
+}
+
+.about-page .section h2 {
+  margin-bottom: 14px;
+  color: #e63946;
+  border-left: 4px solid #e63946;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.about-page .section ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.about-page .section ul li {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.about-page .section ul li .project-btn {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 5px 10px;
+  background: #e63946;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 13px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.about-page .section ul li .project-btn:hover {
+  background: #c72d3e;
+  transform: translateY(-1px);
+}
+
+.about-page .section .skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.about-page .section .skills span {
+  background: #f1f3f4;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #333;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.about-page .section .skills span:hover {
+  background: #f8d7da;
+}
+
+@media (max-width: 600px) {
+  .about-page {
+    padding: 15px;
+  }
+
+  .about-page .profile-card {
+    padding: 25px;
+  }
+
+  .about-page .social-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

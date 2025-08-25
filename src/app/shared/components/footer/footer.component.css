@@ -1,0 +1,30 @@
+.footer {
+  background: #f8f9fa;
+  padding: 15px 0;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #555;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 40px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer .footer-links {
+  margin-top: 8px;
+}
+
+.footer .footer-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #c92d2d;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.footer .footer-links a:hover {
+  color: #c92d2d;
+}
