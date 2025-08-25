@@ -36,7 +36,7 @@ export class CategoryPageComponent implements OnInit {
   private apiKey = '676f017549224f488970f1835f9db971';
   private baseUrl = 'https://newsapi.org/v2/top-headlines?country=us';
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+  constructor(private route: ActivatedRoute, private https: HttpClient) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -47,7 +47,7 @@ export class CategoryPageComponent implements OnInit {
 
   fetchCategoryNews(): void {
     const url = `${this.baseUrl}&category=${this.selectedCategory}&pageSize=100&apiKey=${this.apiKey}`;
-    this.http.get<any>(url).subscribe(res => {
+    this.https.get<any>(url).subscribe(res => {
       this.news = (res.articles || []).map((a: any) => ({
         title: a.title,
         description: a.description,

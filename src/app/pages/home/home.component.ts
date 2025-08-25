@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
   private baseUrl = 'https://newsapi.org/v2/top-headlines?country=us';
   private sliderBaseUrl = 'https://newsapi.org/v2/top-headlines?country=us&pageSize=3';
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) {}
+  constructor(private https: HttpClient, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.loadSliderNews();
@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit {
   }
 
   loadSliderNews() {
-    this.http.get(`${this.sliderBaseUrl}&apiKey=${this.apiKey}`).subscribe(
+    this.https.get(`${this.sliderBaseUrl}&apiKey=${this.apiKey}`).subscribe(
       (res: any) => this.sliderArticles = res.articles || [],
       () => console.error('Slider haberleri yüklenemedi')
     );
@@ -66,7 +66,7 @@ export class HomeComponent implements OnInit {
     this.loading = true;
     this.error = null;
     const url = `${this.baseUrl}&pageSize=${this.pageSize}&page=${page}&apiKey=${this.apiKey}`;
-    this.http.get<any>(url).subscribe(
+    this.https.get<any>(url).subscribe(
       res => this.handleResponse(res, page),
       () => { this.error = 'Haberler yüklenemedi'; this.loading = false; }
     );
@@ -76,7 +76,7 @@ export class HomeComponent implements OnInit {
     this.loading = true;
     this.error = null;
     const url = `${this.baseUrl}&category=${category}&pageSize=${this.pageSize}&page=${page}&apiKey=${this.apiKey}`;
-    this.http.get<any>(url).subscribe(
+    this.https.get<any>(url).subscribe(
       res => this.handleResponse(res, page),
       () => { this.error = 'Haberler yüklenemedi'; this.loading = false; }
     );
@@ -86,7 +86,7 @@ export class HomeComponent implements OnInit {
     this.loading = true;
     this.error = null;
     const url = `https://newsapi.org/v2/everything?qInTitle=${query}&pageSize=${this.pageSize}&page=${page}&apiKey=${this.apiKey}`;
-    this.http.get<any>(url).subscribe(
+    this.https.get<any>(url).subscribe(
       res => this.handleResponse(res, page, query),
       () => { this.error = 'Haberler yüklenemedi'; this.loading = false; }
     );
